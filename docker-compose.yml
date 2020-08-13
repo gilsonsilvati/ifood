@@ -32,9 +32,11 @@ services:
   prometheus_ifood:
     container_name: prometheus_ifood
     image: prometheus-ifood
-    network_mode: "host"
+    ports:
+      - "9090:9090"
     
   grafana_ifood:
     container_name: grafana_ifood
-    image: grafana/grafana:6.5.0
-    network_mode: "host"
+    image: grafana/grafana:7.1.1
+    ports:
+      - "3000:3000"
